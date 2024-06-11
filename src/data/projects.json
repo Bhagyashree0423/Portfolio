@@ -1,0 +1,18 @@
+[
+    {
+      "title": "Login Page",
+      "imageSrc": "projects/project1.png",
+      "description": "This is a project made to learn HTML and CSS basics by me",
+      "skills": ["HTML", "CSS"],
+      "demo": "https://www.example.com",
+      "source": "https://www.example.com"
+    },
+    {
+      "title": "More projects to come",
+      "imageSrc": "projects/project.png",
+      "description": "...",
+      "skills": ["..."],
+      "demo": "https://www.example.com",
+      "source": "https://www.example.com"
+    }
+  ]

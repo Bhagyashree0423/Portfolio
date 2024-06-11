@@ -1,0 +1,34 @@
+[
+    {
+      "title": "HTML",
+      "imageSrc": "experience/html.png"
+    },
+    {
+      "title": "CSS",
+      "imageSrc": "experience/css.png"
+    },
+    {
+      "title": "Javascript",
+      "imageSrc": "experience/js.png"
+    },
+    {
+      "title": "SQL",
+      "imageSrc": "experience/sql.png"
+    },
+    {
+      "title": "C",
+      "imageSrc": "experience/c.png"
+    },
+    {
+      "title": "C++",
+      "imageSrc": "experience/c++.png"
+    },
+    {
+      "title": "Java",
+      "imageSrc": "experience/java.png"
+    },
+    {
+      "title": "React",
+      "imageSrc": "experience/react.png"
+    }
+  ]
