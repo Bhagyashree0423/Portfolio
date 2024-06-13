@@ -24,24 +24,17 @@
   font-weight: 900;
   margin-bottom: 33px;
   font-family: var(--font-roboto);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 1) 70%,
-    rgb(255, 255, 255) 120%
-  );
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
 }
 
 .description {
   font-size: 30px;
   font-family: var(--font-roboto);
   margin-bottom: 10px;
-  margin-right: 20px;
+  /* margin-right: 10px; */
 }
 
 .heroImg {
-  width: 40%;
+  width: 45%;
   z-index: 1;
   margin-top: 14px;
   margin-right: 20px;
@@ -99,5 +92,9 @@
 
   .content {
     align-items: center;
+  }
+
+  .heroImg{
+    width: 80%;
   }
 }
