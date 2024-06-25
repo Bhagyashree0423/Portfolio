@@ -9,7 +9,7 @@ export const Hero = () => {
       <div className={styles.content}>
         <h1 className={styles.title}>Hey! <br /> I'm Bhagyashree</h1>
         <p className={styles.description}>
-          Welcome to my portfolio! <br /> I am just a begineer in Web Development field and have learnt the very basics of HTML, CSS, JS and now have begin my journey towards REACT.JS. 
+          Welcome to my portfolio! <br /> I am just a begineer in Web Development field and have learnt the very basics of HTML, CSS, JS and now have begin my journey towards REACT.JS and EXPRESS.JS. 
           </p>
       </div>
       <img
