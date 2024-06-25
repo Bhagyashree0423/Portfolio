@@ -1,10 +1,8 @@
 import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
 import styles from './Suggestion.module.css';
-import { getImageUrl } from "../../utils";
-
-console.log('Suggestion component loaded');
 
 export const Suggestion = () => {
     const initialValues = {
@@ -19,17 +17,30 @@ export const Suggestion = () => {
         message: Yup.string().required('Message is required!'),
     });
 
+    const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+        alert(JSON.stringify(values, null, 2));
+        console.log('Values:', values);
+        try {
+            const res = await axios.post('http://localhost:5001/api/contacts', values);
+            console.log('Submitted values:', res.data);
+            // Show success message
+            alert('Form submitted successfully!');
+            resetForm();
+        } catch (error) {
+            console.error('Error submitting form:', error.response ? error.response.data : error.message);
+            // Show error message
+            alert('Failed to submit form. Please try again.');
+        }
+        setSubmitting(false);
+    };
+
     return (
         <section className={styles.container} id="suggestion">
-            <h2 className={styles.title}>Sugestion form</h2>
+            <h2 className={styles.title}>Suggestion form</h2>
             <Formik
                 initialValues={initialValues}
                 validationSchema={Suggestionschema}
-                onSubmit={(values,{setSubmitting}) => {
-                    console.log('Submitted values:',values);
-                    setSubmitting(false);
-                    // resetForm();
-                }}
+                onSubmit={handleSubmit}
             >
                 {(formik) => (
                     <form onSubmit={formik.handleSubmit}>
@@ -59,13 +70,6 @@ export const Suggestion = () => {
                                 </button>
                             </div>
                         </div>
-
-                        {/* <img
-                            src={getImageUrl("suggestion/suggestionImage.jpeg")}
-                            alt="Me filling form"
-                            className={styles.suggestionImg}
-                        /> */}
-
                     </form>
                 )}
             </Formik >

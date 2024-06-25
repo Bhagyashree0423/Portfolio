@@ -5,6 +5,10 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
-    include: ['formik','yup'],
+    include: ['formik', 'yup'],
+  },
+  build: {
+    sourcemap: true,
+    outDir: 'dist'
   },
 });
