@@ -60,7 +60,7 @@ app.post('/api/contacts', async (req, res) => {
         // Send email notification
         const mailOptions = {
             from: process.env.EMAIL_USER,
-            to: process.env.EMAIL_USER, // or another email address
+            to: process.env.EMAIL_USER, 
             subject: 'New Suggestion😁',
             text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
         };
