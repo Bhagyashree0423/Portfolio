@@ -28,7 +28,15 @@
       "imageSrc": "experience/java.png"
     },
     {
-      "title": "React",
+      "title": "React.js",
       "imageSrc": "experience/react.png"
+    },
+    {
+      "title": "Node.js",
+      "imageSrc": "experience/node.png"
+    },
+    {
+      "title": "Mongodb",
+      "imageSrc": "experience/mongodb.png"
     }
   ]

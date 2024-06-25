@@ -19,7 +19,6 @@ export const Suggestion = () => {
 
     const handleSubmit = async (values, { setSubmitting, resetForm }) => {
         alert(JSON.stringify(values, null, 2));
-        console.log('Values:', values);
         try {
             const res = await axios.post('http://localhost:5001/api/contacts', values);
             console.log('Submitted values:', res.data);
