@@ -1,0 +1,45 @@
+@import "../../vars.css";
+
+.form {
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 80px;
+}
+
+.title {
+    color: var(--color-text);
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 1.75px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.label {
+    font-size: 25px;
+    letter-spacing: 1.35px;
+    color: var(--color-text);
+}
+
+.data {
+    background-color: transparent;
+    width: 70%;
+    height: 80px;
+    padding: 10px 20px;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+    color: var(--color-text);
+    border: 0.5px solid #693ea0;
+}
+
+.blogbutton {
+    color: var(--color-text);
+    background: linear-gradient(180deg, #693ea0 0%, #441353 100%);
+    border-radius: 20px;
+    font-size: 25px;
+    padding: 5px 10px;
+    border: none;
+    box-shadow: 0 16px 14px 0 #1e042d;
+    text-transform: uppercase;
+    cursor: pointer;
+}

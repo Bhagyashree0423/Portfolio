@@ -1,0 +1,52 @@
+@import "../../vars.css";
+
+.container {
+  position: relative;
+  background-color: rgba(12, 12, 12, 0.6);
+  border-radius: 15px;
+  padding: 50px;
+  margin-top: 80px;
+  z-index: 1;
+  margin-left: 7%;
+  margin-right: 7%;
+  color: var(--color-text);
+}
+
+.title {
+  color: var(--color-text);
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 1.75px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+}
+
+.post {
+  border-radius: 20px;
+  background: linear-gradient(180deg, #693ea0 0%, #330d3f 100%);
+  box-shadow: 0 16px 14px 0 #1e042d;
+  padding: 18px 24px;
+  color: var(--color-text);
+  margin-bottom: 20px; 
+}
+
+.subtitle {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.bloginfo {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.blogdetails {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.534);
+}

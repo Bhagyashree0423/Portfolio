@@ -1,3 +1,5 @@
+console.log('Server starting...');
+
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
@@ -7,8 +9,9 @@ const nodemailer = require('nodemailer');
 
 const app = express();
 const PORT = process.env.PORT || 5001;
+// const host = '0.0.0.0';
 
-// Connect to MongoDB
+console.log('Connecting to MongoDB...');
 const connectDB = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI, {
@@ -17,23 +20,20 @@ const connectDB = async () => {
         });
         console.log('MongoDB connected...');
     } catch (err) {
-        console.error(err.message);
+        console.error('MongoDB connection error:', err.message);
         process.exit(1);
     }
 };
 connectDB();
 
-// Middleware
 app.use(express.json());
+// app.use(cors('https://my-portfolio-using-react-js.netlify.app'));
 app.use(cors());
 
-// Serve static files from the React app
+console.log('Setting up static files...');
 app.use(express.static(path.join(__dirname, '../dist')));
 
-// Contact model
 const Contact = require('./models/Contact');
-
-// Configure Nodemailer
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -42,25 +42,17 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-// API route to handle contact form submissions
 app.post('/api/contacts', async (req, res) => {
     const { name, email, message } = req.body;
-
     console.log('Received contact form submission:', { name, email, message });
 
     try {
-        const newContact = new Contact({
-            name,
-            email,
-            message
-        });
-
+        const newContact = new Contact({ name, email, message });
         const contact = await newContact.save();
 
-        // Send email notification
         const mailOptions = {
             from: process.env.EMAIL_USER,
-            to: process.env.EMAIL_USER, 
+            to: process.env.EMAIL_USER,
             subject: 'New Suggestion😁',
             text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
         };
@@ -80,15 +72,17 @@ app.post('/api/contacts', async (req, res) => {
     }
 });
 
-// Define API routes
-app.get('/api/hello', (req, res) => {
-    res.json({ message: 'Heyy!' });
-});
+console.log('Setting up API routes...');
+app.use('/api/blog', require('./routes/api/blog'));
+app.use('/api/user', require('./routes/api/user'));
 
-// Catch-all handler to send back the React index.html file
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
+
+// app.listen(PORT, () => {
+//     console.log(`Server is running on http://${host}:${PORT}`);
+// });
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

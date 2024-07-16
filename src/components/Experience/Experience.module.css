@@ -1,8 +1,9 @@
+/* src/components/Experience/Experience.module.css */
 @import "../../vars.css";
 
 .container {
   color: var(--color-text);
-  margin-top: 20px;
+  margin-top: 80px;
   margin-left: 7%;
   margin-right: 7%;
 }
