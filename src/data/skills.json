@@ -17,7 +17,7 @@
     },
     {
       "title": "C",
-      "imageSrc": "experience/c.png"
+      "imageSrc": "experience/c1.png"
     },
     {
       "title": "C++",
@@ -38,5 +38,13 @@
     {
       "title": "Mongodb",
       "imageSrc": "experience/mongodb.png"
+    },
+    {
+      "title": "Firebase",
+      "imageSrc": "experience/firebase1.png"
+    },
+    {
+      "title": "Android",
+      "imageSrc": "experience/android.png"
     }
   ]
